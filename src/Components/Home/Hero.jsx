@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import useFallingBarAnimation from "../../hooks/useFallingBarAnimation";
 import { TweenMax } from "gsap/gsap-core";
+import { BackgroundGradientAnimation } from "./ui/background-gradient-animation";
 
 const HERO_TITLE = [
   { firstPart: "cision", secondPart: "mpany" },
@@ -40,13 +41,9 @@ const Hero = () => {
 
   return (
     <div className="relative h-screen flex justify-center items-center text-white bg-black overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center blur-md w-screen"
-        style={{
-          backgroundImage: `url(${HeroWallpaper})`,
-          backgroundRepeat: `no-repeat`,
-        }}
-      ></div>
+      <div className="absolute inset-0 bg-cover bg-center blur-md w-screen">
+        <BackgroundGradientAnimation />
+      </div>
       <div className="flex justify-center flex-col items-center gap-14 z-10">
         <div>
           <button className="text-2xl border-black border p-4 px-8 rounded-full bg-black">
